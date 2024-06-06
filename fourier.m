@@ -1,6 +1,6 @@
 clear all clc
 x=[0,30,0,0,0,0,0,0,10,0];
-
+%here the capitals don't matter
 X=x(1);
 %X=@(n) x(1);
 syms n
@@ -13,9 +13,9 @@ Xabs=[];
 Xang=[];
 for k=1:length(x)
     Xabs(k)=abs(X(k));
-    Xang(k)=angle(X(k));
+    Xang(k)=angle(X(k+1));
 end
 k=1:length(x);
 stem(k,x),figure
-stem(k,Xabs),figure
+stem(k,sqrt(Xabs)),figure
 stem(k,Xang);
